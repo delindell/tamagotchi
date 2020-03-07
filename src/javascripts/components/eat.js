@@ -1,35 +1,29 @@
 import utils from '../helpers/utils';
+import tamagotchiData from '../helpers/data/tamagotchiData';
 
-let full = 100;
 
 const eatDomStringBuilder = () => {
   let domString = '';
   domString += '<h2>Eat</h2>';
   domString += '<button id="healthy-food-button">Healthy Food</button><br>';
   domString += '<button id="unhealthy-food-button">Unhealthy Food</button><br>';
-  domString += `${full}`;
+  domString += `${tamagotchiData.getTamagotchiInfo().full}`;
   utils.printToDom('eat', domString);
-  $('#healthy-food-button').click(eatHealthyFood);
-  $('#unhealthy-food-button').click(eatUnhealthyFood);
-};
+  $('#healthy-food-button').click(() => {
+    if (full <= 90 && full > 0) {
+      full += 10;
+      console.error(full);
+    } else if (full < 89) {
+      full = 100;
+      console.error(full);
+      eatDomStringBuilder();
+    };
+  $('#unhealthy-food-button').click(() => {
+    if (full <= 100 && full > 3) {
+      full -= 15;
+      console.error(full);
+      eatDomStringBuilder();
+    };
+});
 
-const eatHealthyFood = () => {
-  if (full <= 90 && full > 0) {
-    full += 10;
-    console.error(full);
-  } else if (full < 89) {
-    full = 100;
-    console.error(full);
-    eatDomStringBuilder();
-  }
-};
-
-const eatUnhealthyFood = () => {
-  if (full <= 100 && full > 3) {
-    full -= 15;
-    console.error(full);
-    eatDomStringBuilder();
-  }
-};
-
-export default { eatDomStringBuilder };
+export default { eatDomStringBuilder }
