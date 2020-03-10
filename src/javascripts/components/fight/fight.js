@@ -1,13 +1,16 @@
 import utils from '../../helpers/utils';
+import './fight.scss';
 
 let strength = 100;
 
 const strengthDomStringBuilder = () => {
   let domString = '';
   domString += '<h2>Fight</h2>';
+  domString += '<div id="button-group">';
   domString += '<button id="running-away-button">Running Away (bravely)</button><br>';
   domString += '<button id="commiting-violence-button">Commiting Violence</button><br>';
-  domString += `${strength}`;
+  domString += '</div>';
+  domString += `<span id="score">${strength}</span>`;
   utils.printToDom('fight', domString);
   $('#running-away-button').click(() => {
     if (strength <= 99) {

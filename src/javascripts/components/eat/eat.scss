@@ -1,0 +1,6 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+#eat {
+  @include default-quad ($yellow, $darkgray);
+}

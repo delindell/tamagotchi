@@ -1,0 +1,6 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+#fight {
+  @include default-quad($green, $blue);
+}
