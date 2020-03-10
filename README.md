@@ -11,3 +11,8 @@ In this project we built upon our previous knowledge of using ES6 modules to cre
 1. In your command line run hs `-p 9999`
 
 1. In your browser go to to `http://localhost:9999`
+
+## ScreenShot
+
+![Tamagotchi](./screenshots/tamagotchiScreenshot.png)
+
