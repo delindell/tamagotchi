@@ -1,0 +1,6 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+#sleep {
+  @include default-quad ($gold, $darkgray);
+}
